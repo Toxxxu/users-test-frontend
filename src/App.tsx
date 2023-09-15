@@ -1,11 +1,18 @@
 import React from 'react';
-import './App.css';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { CssBaseline } from '@mui/material';
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+    </ThemeProvider>
   );
 }
 
