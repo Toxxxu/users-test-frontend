@@ -1,34 +1,14 @@
 import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
-import React, { useEffect, useState } from 'react'
-import { usersService } from '../../services/users/users.service';
-import { User } from '../../models/User.model';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../hooks/auth/useAuth';
 
 const Header: React.FC = () => {
-  const [auth, setAuth] = useState<boolean>(false);
+  const auth = useAuth();
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-
-    setAuth(false);
   }
-
-  useEffect(() => {
-    const token: string = localStorage.getItem('token') || '';;
-
-    const fetchUser = async () => {
-      try {
-        const user: User = await usersService.getProfile(token);
-        if (user) {
-          setAuth(true);
-        }
-      } catch (error) {
-        console.error('Error fetching profile.');
-      }
-    }
-
-    token ? fetchUser() : setAuth(false);
-  }, []);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
