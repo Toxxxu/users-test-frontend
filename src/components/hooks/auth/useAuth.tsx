@@ -9,6 +9,7 @@ const useAuth = (setAuth: React.Dispatch<React.SetStateAction<boolean>>) => {
       try {
         const user = await usersService.getProfile(token);
         if (user) {
+          localStorage.setItem('username', user.username);
           setAuth(true);
         }
       } catch (error) {
