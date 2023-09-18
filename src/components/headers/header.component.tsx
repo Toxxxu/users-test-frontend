@@ -1,7 +1,7 @@
 import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useAuth from '../hooks/auth/useAuth';
+import { useAuth } from '../hooks/auth/useAuth';
 
 const Header: React.FC = () => {
   const auth = useAuth();
