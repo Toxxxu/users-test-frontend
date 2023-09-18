@@ -8,6 +8,7 @@ const Header: React.FC = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
+    window.location.reload();
     setAuth(false);
   }
 
@@ -21,7 +22,7 @@ const Header: React.FC = () => {
             Tests
           </Typography>
           {auth ? 
-          (<Button color="inherit" onClick={handleLogout} component={Link} to="/">Logout</Button>) :
+          (<Button color="inherit" onClick={handleLogout}>Logout</Button>) :
           (
             <Button color="inherit" component={Link} to="login">Login</Button>
           )}
