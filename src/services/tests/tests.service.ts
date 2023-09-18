@@ -12,6 +12,32 @@ export const testsService = {
     }
   },
 
+  async findAssignedTests(token: string): Promise<Test[]> {
+    try {
+      const response = await testsApi.get<Test[]>('/assignedtests', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      return response.data;
+    } catch (error) {
+      throw new Error('Failed to fetch assigned tests');
+    }
+  },
+
+  async findCompletedTests(token: string): Promise<Test[]> {
+    try {
+      const response = await testsApi.get<Test[]>('/completedtests', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      return response.data;
+    } catch (error) {
+      throw new Error('Failed to fetch completed tests');
+    }
+  },
+
   async findTest(testId: string, token: string): Promise<Test> {
     try {
       const response = await testsApi.get<Test>(`${testId}`, {
