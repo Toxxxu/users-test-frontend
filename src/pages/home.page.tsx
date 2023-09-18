@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { ViewAllTests } from '../components/lists/view-all-tests.component';
 import { Header } from '../components/headers/header.component';
 import { useAuth } from '../components/hooks/auth/useAuth';
+import { AssignedTests } from '../components/lists/assigned-tests.component';
+import { CompletedTests } from '../components/lists/completed-tests.component';
 
 const HomePage: React.FC = () => {
   const [auth, setAuth] = useState<boolean>(false);
@@ -12,7 +14,12 @@ const HomePage: React.FC = () => {
     <div>
       <Header />
       <div style={{ margin: '20px' }}>
-        {auth ? (<div></div>) : (<ViewAllTests />)}
+        {auth ? (
+          <>
+            <AssignedTests />
+            <CompletedTests />
+          </>
+        ) : (<ViewAllTests />)}
       </div>
     </div>
   )
