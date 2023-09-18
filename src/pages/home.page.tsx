@@ -4,6 +4,7 @@ import { Header } from '../components/headers/header.component';
 import { useAuth } from '../components/hooks/auth/useAuth';
 import { AssignedTests } from '../components/lists/assigned-tests.component';
 import { CompletedTests } from '../components/lists/completed-tests.component';
+import { CreateTestButton } from '../components/buttons/create-test-button.component';
 
 const HomePage: React.FC = () => {
   const [auth, setAuth] = useState<boolean>(false);
@@ -17,6 +18,7 @@ const HomePage: React.FC = () => {
         {auth ? (
           <>
             <AssignedTests />
+            <CreateTestButton />
             <CompletedTests />
           </>
         ) : (<ViewAllTests />)}
