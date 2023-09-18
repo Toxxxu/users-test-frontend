@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Card, CardContent, CircularProgress, Grid, Typography } from '@mui/material';
-import { useTests } from '../hooks/tests/useTests';
+import { useTests } from '../hooks/tests/unauthorized/useTests';
 
 const ViewAllTests: React.FC = () => {
   const getData = useTests();
