@@ -1,14 +1,17 @@
 import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../hooks/auth/useAuth';
 
 const Header: React.FC = () => {
-  const auth = useAuth();
+  const [auth, setAuth] = useState<boolean>(false);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
+    setAuth(false);
   }
+
+  useAuth(setAuth);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -18,7 +21,7 @@ const Header: React.FC = () => {
             Tests
           </Typography>
           {auth ? 
-          (<Button color="inherit" onClick={handleLogout}>Logout</Button>) :
+          (<Button color="inherit" onClick={handleLogout} component={Link} to="/">Logout</Button>) :
           (
             <Button color="inherit" component={Link} to="login">Login</Button>
           )}

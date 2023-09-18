@@ -1,9 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { usersService } from '../../../services/users/users.service';
 
-const useAuth = () => {
-  const [auth, setAuth] = useState<boolean>(false);
-
+const useAuth = (setAuth: React.Dispatch<React.SetStateAction<boolean>>) => {
   useEffect(() => {
     const token: string = localStorage.getItem('token') || '';
 
@@ -19,9 +17,9 @@ const useAuth = () => {
     }
 
     token ? fetchUser() : setAuth(false);
-  }, []);
+  });
 
-  return auth;
+  return;
 }
 
 export { useAuth };
