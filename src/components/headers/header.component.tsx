@@ -19,7 +19,7 @@ const Header: React.FC = () => {
       <AppBar position="static">
         <Toolbar>
           <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
-            Tests
+            <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>Tests</Link>
           </Typography>
           {auth ? 
           (<Button color="inherit" onClick={handleLogout}>Logout</Button>) :
