@@ -27,7 +27,7 @@ export const usersService = {
     }
   },
 
-  async doTestById(testId: string, doTestRequest: DoTestRequestDto, token: string): Promise<GetUserTestResultDto> {
+  async doTestById(testId: string, doTestRequest: DoTestRequestDto[], token: string): Promise<GetUserTestResultDto> {
     try {
       const response = await usersApi.post<GetUserTestResultDto>(
         `/do/${testId}`,
