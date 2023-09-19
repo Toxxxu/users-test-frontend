@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const CreateTestButton: React.FC = () => {
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+    <Box sx={{ display: 'flex', justifyContent: 'flex-end', margin: '20px' }}>
       <Button
         variant="contained"
         color="primary"

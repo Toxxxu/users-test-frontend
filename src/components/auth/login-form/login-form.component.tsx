@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { TextField, Typography, Link as MuiLink, Button } from "@mui/material";
+import { TextField, Typography, Button } from "@mui/material";
 import { authService } from "../../../services/auth/auth.service";
 
 const LoginForm: React.FC = () => {
@@ -59,7 +59,7 @@ const LoginForm: React.FC = () => {
           error={passwordErrored}
         />
         <Link to="/signup" style={{ alignSelf: 'start', marginTop: '8px' }}>
-          <MuiLink>Sign Up</MuiLink>
+          Sign Up
         </Link>
       </div>
       <Button variant="contained" sx={{ width: '320px' }} onClick={handleSignup}>
