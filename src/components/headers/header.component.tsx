@@ -24,7 +24,7 @@ const Header: React.FC = () => {
           {auth ? 
           (<Button color="inherit" onClick={handleLogout}>Logout</Button>) :
           (
-            <Button color="inherit" component={Link} to="login">Login</Button>
+            <Button color="inherit" component={Link} to="/login">Login</Button>
           )}
         </Toolbar>
       </AppBar>
