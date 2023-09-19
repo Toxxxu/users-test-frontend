@@ -5,6 +5,7 @@ import { LoginPage } from '../pages/login.page';
 import { SignupPage } from '../pages/signup.page';
 import { TestViewPage } from '../pages/test-view.page';
 import { TestCompletedPage } from '../pages/test-completed.page';
+import { CreateTestPage } from '../pages/create-test.page';
 
 const Routes: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const Routes: React.FC = () => {
       <Route path="signup" element={<SignupPage />} />
       <Route path="/completed-test/:testId" element={<TestCompletedPage />} />
       <Route path="/test-view/:testId" element={<TestViewPage />} />
+      <Route path="/create-test" element={<CreateTestPage />} />
     </ReactRouterRoutes>
   )
 }
