@@ -51,9 +51,13 @@ export const testsService = {
     }
   },
 
-  async createTest(createTestRequest: CreateTestRequestDto): Promise<Test> {
+  async createTest(createTestRequest: CreateTestRequestDto, token: string): Promise<Test> {
     try {
-      const response = await testsApi.post<Test>('/', createTestRequest);
+      const response = await testsApi.post<Test>('/', createTestRequest, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       return response.data;
     } catch (error) {
       throw new Error('Failed to create test');
